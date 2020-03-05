@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorLightBlue">#7bd3f7</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="app_green">#96ca51</color>
+    <color name="app_charcoal">#333742</color>
+    <color name="app_charcoal_light">#65676e</color>
+    <color name="app_charcoalDark">#ff272a31</color>
+
+    <color name="black">#000000</color>
+    <color name="green">#96CA50</color>
+    <color name="light_grey">#F4F4F4</color>
+    <color name="red">#D0011B</color>
+    <color name="dard_red">#d0021b</color>
+    <color name="dark_grey">#6a6a6a</color>
+    <color name="white">#ffffff</color>
+    <color name="grey">#ececec</color>
+    <color name="grey1">#a7aaae</color>
+    <color name="transparent">#0000ffff</color>
+    <color name="atm_withdraw_card">#ffefd2</color>
+    <color name="atm_withdraw_border">#ffdea4</color>
+
+    <color name="light_orange">#ffeea9</color>
+    <color name="dark_orange">#f6a623</color>
+    <color name="light_gray">#ededed</color>
+    <color name="dark_gray1">#1A1A1A</color>
+    <color name="mild_grey">#9B9B9B</color>
+    <color name="form_mild_grey">#c6c6c6</color>
+    <color name="taupe">#363636</color>
+    <color name="dim_grey">#666666</color>
+    <color name="hintcolorgrey">#8f8f8f</color>
+    <color name="textColorLight">#cacaca</color>
+    <color name="experian_gray40">#666666</color>
+    <color name="textColor">#000000</color>
+    <color name="orange">#ffa500</color>
+    <color name="colorOverlay">#78ffffff</color>
+    <color name="menu_unselected_color">#000000</color>
+    <color name="card_subtle_background">#f8f8f7</color>
+    <color name="maincardcolor">#000000</color>
+</resources>
