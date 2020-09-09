@@ -77,8 +77,12 @@ class CallLogFragment : Fragment() {
                         val callDayTime = Date(callDate.toLong()).toString()
                         val callDuration = cursor.getString(duration)
                         Thread(Runnable {
-                            callDetails.add(CallDetails(
-                                getCallerNameUri(callerNameUri),phoneNumber,callDuration,callType,callDayTime))//getCallerNameUri(callerNameUri),
+                            try {
+                                callDetails.add(CallDetails(
+                                    getCallerNameUri(callerNameUri),phoneNumber,callDuration,callType,callDayTime))//getCallerNameUri(callerNameUri),
+                            } catch (e:Exception){
+                                e.printStackTrace()
+                            }
                         }).start()
 
                     }while (cursor.moveToNext())

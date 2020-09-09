@@ -31,9 +31,9 @@ class ContactFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val list = getCallDetails()
-        val adapter_list = ContactListAdapter(activity!!,list)
+        val adapterList = ContactListAdapter(activity!!,list)
         contactRv.apply {
-            adapter = adapter_list
+            adapter = adapterList
             layoutManager = LinearLayoutManager(context)
         }
     }
@@ -45,7 +45,6 @@ class ContactFragment : Fragment() {
             try {
                 val cursor = context!!.contentResolver.query(contentUri,null,null,null, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " ASC")
                 Log.e("CursorCount",""+cursor?.count)
-//                val nameUri = cursor!!.getColumnIndex(CallLog.Calls.CACHED_LOOKUP_URI)
                 val number = cursor!!.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)
                 val name = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME)
 
@@ -56,7 +55,7 @@ class ContactFragment : Fragment() {
                         val contactName = cursor.getString(name)
                         contactDetails.add(
                             ContactDetails(
-                            contactNumber,contactName)
+                            contactName,contactNumber)
                         )
 
                     }while (cursor.moveToNext())

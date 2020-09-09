@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:id="@+id/contactLayout"
     android:layout_marginBottom="10dp"
     android:layout_height="wrap_content">
-
-
-    <androidx.appcompat.widget.AppCompatTextView
+    <TextView
         android:id="@+id/contactTextView"
         android:layout_width="match_parent"
         android:padding="5dp"
+        android:textColor="@color/app_charcoalDark"
         android:layout_height="wrap_content"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/grey"
+        android:layout_height="1dp"/>
 
 </LinearLayout>

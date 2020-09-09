@@ -17,27 +17,16 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 
 import com.e.callmaker.R
+import kotlinx.android.synthetic.main.fragment_dialing_number.*
 
 /**
  * A simple [Fragment] subclass.
  */
-class DialNumberFragment : Fragment() {
+class DialNumberFragment : Fragment(), View.OnClickListener {
 
     private val MY_PERMISSIONS_REQUEST_CALL_PHONE = 1234
-    var b1 : Button? = null
-    var b2 : Button? = null
-    var b3 : Button? = null
-    var b4 : Button? = null
-    var b5 : Button? = null
-    var b6 : Button? = null
-    var b7 : Button? = null
-    var b8 : Button? = null
-    var b9 : Button? = null
-    var b0 : Button? = null
-    var b_clear : Button? = null
-    var numText : TextView? = null
+
     var number : String? = ""
-    var makeCall : LinearLayout? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -54,132 +43,18 @@ class DialNumberFragment : Fragment() {
     }
 
     private fun initialization(){
-        b0 = view?.findViewById(R.id.btn0)
-        b1 = view?.findViewById(R.id.btn1)
-        b2 = view?.findViewById(R.id.btn2)
-        b3 = view?.findViewById(R.id.btn3)
-        b4 = view?.findViewById(R.id.btn4)
-        b5 = view?.findViewById(R.id.btn5)
-        b6 = view?.findViewById(R.id.btn6)
-        b7 = view?.findViewById(R.id.btn7)
-        b8 = view?.findViewById(R.id.btn8)
-        b9 = view?.findViewById(R.id.btn9)
-        b_clear = view?.findViewById(R.id.btnCl)
-        numText = view?.findViewById(R.id.numText)
-        makeCall = view?.findViewById(R.id.makeCall)
-
-        b0?.setOnClickListener {
-            if(number?.length == 10){
-                return@setOnClickListener
-            }else{
-                number += "0"
-                numText?.text = number
-            }
-
-        }
-
-        b1?.setOnClickListener {
-            if(number?.length == 10){
-                return@setOnClickListener
-            }else{
-                number += "1"
-                numText?.text = number
-            }
-
-        }
-
-        b2?.setOnClickListener {
-            if(number?.length == 10){
-                return@setOnClickListener
-            }else{
-                number += "2"
-                numText?.text = number
-            }
-
-        }
-
-        b3?.setOnClickListener {
-            if(number?.length == 10){
-                return@setOnClickListener
-            }else{
-                number += "3"
-                numText?.text = number
-            }
-
-        }
-
-        b4?.setOnClickListener {
-            if(number?.length == 10){
-                return@setOnClickListener
-            }else{
-                number += "4"
-                numText?.text = number
-            }
-
-        }
-
-        b5?.setOnClickListener {
-            if(number?.length == 10){
-                return@setOnClickListener
-            }else{
-                number += "5"
-                numText?.text = number
-            }
-
-        }
-
-        b6?.setOnClickListener {
-            if(number?.length == 10){
-                return@setOnClickListener
-            }else{
-                number += "6"
-                numText?.text = number
-            }
-
-        }
-
-        b7?.setOnClickListener {
-            if(number?.length == 10){
-                return@setOnClickListener
-            }else{
-                number += "7"
-                numText?.text = number
-            }
-
-        }
-
-        b8?.setOnClickListener {
-            if(number?.length == 10){
-                return@setOnClickListener
-            }else{
-                number += "8"
-                numText?.text = number
-            }
-
-        }
-
-        b9?.setOnClickListener {
-            if(number?.length == 10){
-                return@setOnClickListener
-            }else{
-                number += "9"
-                numText?.text = number
-            }
-
-        }
-
-        b_clear?.setOnClickListener {
-            number = ""
-            numText?.text = ""
-        }
-        makeCall?.setOnClickListener {
-            if (number?.length == 10){
-                callMakingEvent(numText?.text.toString())
-            } else{
-                Toast.makeText(activity,"Provided number is invalid", Toast.LENGTH_SHORT).show()
-
-            }
-        }
+        btn0?.setOnClickListener (this)
+        btn1?.setOnClickListener (this)
+        btn2?.setOnClickListener (this)
+        btn3?.setOnClickListener (this)
+        btn4?.setOnClickListener (this)
+        btn5?.setOnClickListener (this)
+        btn6?.setOnClickListener (this)
+        btn7?.setOnClickListener (this)
+        btn8?.setOnClickListener (this)
+        btn9?.setOnClickListener (this)
+        btnCl?.setOnClickListener (this)
+        makeCall?.setOnClickListener (this)
     }
 
     private fun callMakingEvent(string:String) {
@@ -194,6 +69,106 @@ class DialNumberFragment : Fragment() {
             }
         }
         startActivity(callIntent)
+    }
+
+    override fun onClick(v: View?) {
+        when (v!!.id){
+            R.id.btn0 -> {
+                if(number?.length == 10){
+                    return
+                }else{
+                    number += "0"
+                    numText?.text = number
+                }
+
+            }
+            R.id.btn1 -> {
+                if(number?.length == 10){
+                    return
+                }else{
+                    number += "1"
+                    numText?.text = number
+                }
+
+            }
+            R.id.btn2 -> {
+                if(number?.length == 10){
+                    return
+                }else{
+                    number += "2"
+                    numText?.text = number
+                }
+
+            }
+            R.id.btn3 -> {
+                if(number?.length == 10){
+                    return
+                }else{
+                    number += "3"
+                    numText?.text = number
+                }
+            }
+            R.id.btn4 -> {
+                if(number?.length == 10){
+                    return
+                }else{
+                    number += "4"
+                    numText?.text = number
+                }
+            }
+            R.id.btn5 -> {
+                if(number?.length == 10){
+                    return
+                }else{
+                    number += "5"
+                    numText?.text = number
+                }
+            }
+            R.id.btn6 -> {
+                if(number?.length == 10){
+                    return
+                }else{
+                    number += "6"
+                    numText?.text = number
+                }
+            }
+            R.id.btn7 -> {
+                if(number?.length == 10){
+                    return
+                }else{
+                    number += "7"
+                    numText?.text = number
+                }
+            }
+            R.id.btn8 -> {
+                if(number?.length == 10){
+                    return
+                }else{
+                    number += "8"
+                    numText?.text = number
+                }
+            }
+            R.id.btn9 -> {
+                if(number?.length == 10){
+                    return
+                }else{
+                    number += "9"
+                    numText?.text = number
+                }
+            }
+            R.id.btnCl -> {
+                number = ""
+                numText?.text = ""
+            }
+            R.id.makeCall -> {
+                if (number?.length == 10){
+                    callMakingEvent(numText?.text.toString())
+                } else{
+                    Toast.makeText(activity,"Provided number is invalid", Toast.LENGTH_SHORT).show()
+
+                }
+            }
+        }
     }
 
 
